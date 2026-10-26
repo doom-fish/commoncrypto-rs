@@ -1,0 +1,40 @@
+[package]
+name = "commoncrypto-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+description = "Stream SHA-256 data with Apple's CommonCrypto"
+license = "MIT OR Apache-2.0"
+authors = ["Per Johansson <per@doom.fish>"]
+homepage = "https://github.com/doom-fish/commoncrypto-rs"
+repository = "https://github.com/doom-fish/commoncrypto-rs"
+readme = "README.md"
+keywords = ["apple", "commoncrypto", "sha256", "crypto", "ffi"]
+categories = ["api-bindings", "cryptography", "os::macos-apis"]
+include = [
+    "src/**/*",
+    "examples/**/*",
+    "Cargo.toml",
+    "README.md",
+    "CHANGELOG.md",
+    "COVERAGE.md",
+    "LICENSE-*",
+]
+
+[lib]
+name = "commoncrypto"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+missing_safety_doc = "allow"
+
+[package.metadata.docs.rs]
+default-target = "aarch64-apple-darwin"
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "aarch64-apple-ios"]
+
+[badges]
+maintenance = { status = "actively-developed" }
